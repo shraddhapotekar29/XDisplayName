@@ -7,12 +7,11 @@ const DisplayName=()=>{
     const[sirName,setSirName]=useState("");
     const[showName,setShowName]=useState(false);
 
-
 const submitFn=(e)=>{
    e.preventDefault();
-if (name && sirName) {
+// if (name && sirName) {
     setShowName(true);
-  } 
+//   } 
 }
 
 
