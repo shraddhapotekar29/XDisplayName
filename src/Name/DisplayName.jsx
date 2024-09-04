@@ -24,7 +24,7 @@ const regex=/^[a-zA-Z]+$/
 return(<div className={styles.mainDiv}><h1>Full Name Display</h1>
 <form onSubmit={submitFn}>
     <label htmlFor="name">First Name:</label>
-    <input type="text" id="name"  onChange={(e) => {
+    <input type="text" id="name" value={name} onChange={(e) => {
             const value = e.target.value;
             if (validation(value)) {
               setName(value);
@@ -32,7 +32,7 @@ return(<div className={styles.mainDiv}><h1>Full Name Display</h1>
           }} required/>
     <br />
     <label htmlFor="lName">Last Name:</label>
-    <input type="text" id="lName"  onChange={(e) => {
+    <input type="text" id="lName" value={sirName} onChange={(e) => {
             const value = e.target.value;
             if (validation(value)) {
               setSirName(value);
