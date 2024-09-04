@@ -10,7 +10,13 @@ const DisplayName=()=>{
 
 const submitFn=(e)=>{
    e.preventDefault();
-   return true;
+//    return true;
+//setShowName(true);
+if (name && sirName) {
+    setShowName(true);
+  } else {
+    setShowName(false);
+  }
 }
 
 const validation=(nameVal)=>{
@@ -18,7 +24,7 @@ const regex=/^[a-zA-Z]+$/
  return regex.test(nameVal);
 }
 return(<div className={styles.mainDiv}><h1>Full Name Display</h1>
-<form onSubmit={(e)=>{if(submitFn(e)){ setShowName(true)}}}>
+<form onSubmit={submitFn}>
     <label htmlFor="name">First Name:</label>
     <input type="text" id="name" onChange={(e)=>{if(validation(e.target.value)){setName(e.target.value)}}} required/>
     <br />
