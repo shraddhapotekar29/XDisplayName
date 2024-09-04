@@ -10,13 +10,11 @@ const DisplayName=()=>{
 
 const submitFn=(e)=>{
    e.preventDefault();
-//    return true;
-//setShowName(true);
+//    console.log(name);
+//    console.log(sirName);
 if (name && sirName) {
     setShowName(true);
-  } else {
-    setShowName(false);
-  }
+  } 
 }
 
 const validation=(nameVal)=>{
@@ -26,10 +24,20 @@ const regex=/^[a-zA-Z]+$/
 return(<div className={styles.mainDiv}><h1>Full Name Display</h1>
 <form onSubmit={submitFn}>
     <label htmlFor="name">First Name:</label>
-    <input type="text" id="name" onChange={(e)=>{if(validation(e.target.value)){setName(e.target.value)}}} required/>
+    <input type="text" id="name"  onChange={(e) => {
+            const value = e.target.value;
+            if (validation(value)) {
+              setName(value);
+            }
+          }} required/>
     <br />
     <label htmlFor="lName">Last Name:</label>
-    <input type="text" id="lName" onChange={(e)=>{if(validation(e.target.value)){setSirName(e.target.value)}}} required/>
+    <input type="text" id="lName"  onChange={(e) => {
+            const value = e.target.value;
+            if (validation(value)) {
+              setSirName(value);
+            }
+          }} required/>
     <br />
     <button type="submit">Submit</button>
 
