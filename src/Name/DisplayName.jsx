@@ -40,9 +40,10 @@ return(<div className={styles.mainDiv}><h1>Full Name Display</h1>
           }} required/>
     <br />
     <button type="submit">Submit</button>
-
-    {showName&&<h3>Full Name: {name} {sirName}</h3>}
 </form>
+{showName&&<h3>Full Name: {name} {sirName}</h3>}
 </div>)
 }
 export default DisplayName;
+
+
